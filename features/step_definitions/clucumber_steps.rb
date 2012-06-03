@@ -1,5 +1,5 @@
 Given /^a stub lisp file named \"([^\"]*)\"$/ do |name|
-  Given("a file named \"#{name}\" with:", <<-LISP)
+  step "a file named \"#{name}\" with:", <<-LISP
 (with-open-file (f #p"../files" :direction :output :if-exists :append :if-does-not-exist :create)
   (format f "~A~%" (enough-namestring *load-truename*)))
 (with-open-file (f #p"../packages" :direction :output :if-exists :append :if-does-not-exist :create)
